@@ -31,6 +31,6 @@ class StringCalculatorShould {
     @Test
     public void three_numbers_delimited_both_ways_return_sum() {
     	StringCalculator stringCalculator = new StringCalculator();
-    	assertEquals(stringCalculator.add("1,2,3"), 6);
+    	assertEquals(stringCalculator.add("1,2,3"),6);
     }
 }
