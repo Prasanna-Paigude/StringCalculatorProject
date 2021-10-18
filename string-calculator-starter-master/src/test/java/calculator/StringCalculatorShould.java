@@ -27,4 +27,10 @@ class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
     	assertEquals(stringCalculator.add("1\n2"), 3);
     }
+    
+    @Test
+    public void three_numbers_delimited_both_ways_return_sum() {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	assertEquals(stringCalculator.add("1,2,3"), 6);
+    }
 }

@@ -1,9 +1,9 @@
 package calculator;
 
 public class StringCalculator {
-
+	private final String delimiter = ",|\n";
     public int add(String input) {
-    	String[] numbers = input.split(",|\n");
+    	String[] numbers = input.split(delimiter);
     	
     	if(isEmpty(input)) {
         	return 0;
@@ -12,12 +12,16 @@ public class StringCalculator {
         	return stringToInt(input);
         }
         else {
-        	return getSum(numbers[0], numbers[1]);
+        	return getSum(numbers);
         }
     }
     	
-    	private int getSum(String numA, String numB) {
-        	return Integer.parseInt(numA) + Integer.parseInt(numB);
+    	private int getSum(String [] numbers) {
+    		int sum = 0;
+    		for(int current=0; current<numbers.length; current++) {
+    			sum +=Integer.parseInt(numbers[current]);
+    		}
+        	return sum;
         }
     
     private boolean isEmpty(String input) {
